@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://10.3.3.1/system_certmanager.php
+HostUrl=https://10.3.3.1/system_certmanager.php?act=key&id=68a4dd6ac2174
