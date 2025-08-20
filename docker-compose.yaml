@@ -28,19 +28,19 @@ services:
       - N8N_BASIC_AUTH_PASSWORD=tie-running-sawfish-veneer
       - GENERIC_TIMEZONE=America/New_York
       - N8N_LOG_LEVEL=info
-      - N8N DEFAULT_BINARY_DATA_MODE=filesystem
-      - N8N_METRTICS=true
+      - N8N_DEFAULT_BINARY_DATA_MODE=filesystem
+      - N8N_METRICS=true
       - N8N_EXECUTIONS_DATA_PRUNE=true
       - N8N_EXECUTIONS_DATA_MAX_AGE=168
       - N8N_SECURE_COOKIE=false
     volumes:
-      - n8n_data:/home/node/.n8n
+      - ./data:/home/node/.n8n
       - ./local-files:/home/node/local-files
     networks:
       - n8n_network
 
 volumes:
-  n8n_data:
+  # n8n data is now stored in ./data directory (bind mount)
 
 networks:
   n8n_network:
