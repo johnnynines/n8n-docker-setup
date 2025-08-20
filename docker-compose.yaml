@@ -32,7 +32,6 @@ services:
       - N8N_METRICS=true
       - N8N_EXECUTIONS_DATA_PRUNE=true
       - N8N_EXECUTIONS_DATA_MAX_AGE=168
-      - N8N_SECURE_COOKIE=false
     volumes:
       - ./data:/home/node/.n8n
       - ./local-files:/home/node/local-files
