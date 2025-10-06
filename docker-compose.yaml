@@ -1,23 +1,4 @@
 services:
-  ollama:
-    image: ollama/ollama:latest
-    container_name: ollama_n8n_network
-    ports:
-      - "11434:11434"
-    volumes:
-      - ./ollama_models:/root/.ollama # Optional: Persist models
-    # For GPU support (NVIDIA):
-    # deploy:
-    #   resources:
-    #     reservations:
-    #       devices:
-    #         - driver: nvidia
-    #           count: all
-    #           capabilities: [gpu]
-    environment:
-      - OLLAMA_MODELS=/root/.ollama/models
-    restart: always
-
   n8n:
     image: n8nio/n8n:latest
     container_name: n8n
@@ -40,8 +21,6 @@ services:
       - ./local-files:/home/node/local-files
     networks:
       - n8n_network
-    depends_on:
-      - ollama
 
 volumes:
   n8n_data:
